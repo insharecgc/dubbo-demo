@@ -1,0 +1,32 @@
+server:
+  port: 8888
+
+spring:
+  dubbo:
+    application:
+      id: dubbo-consumer
+      name: dubbo-consumer
+    registry:
+      address: zookeeper://192.168.1.103:2181
+    protocol:
+      name: dubbo
+      port: 20800
+
+
+#spring:
+#  kafka:
+#    bootstrap-servers: 127.0.0.1:9092
+#    consumer:
+#      group-id: test0920
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#    publisher-confirms: true
+#    publisher-returns: true
+#
+#elaticjob:
+#  zookeeper:
+#    server-lists: 127.0.0.1:2181
+#    namespace: springboot-jobs
