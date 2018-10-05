@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.inshare.dubbo.common.ResponseResult;
 import com.inshare.dubbo.common.ResponseResultUtil;
 import com.inshare.dubbo.common.TestApi;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,10 +13,12 @@ import org.springframework.stereotype.Component;
  */
 @Service(interfaceClass = TestApi.class)
 @Component
+@Slf4j
 public class TestHandler implements TestApi {
 
     @Override
     public ResponseResult<String> testService1(long id) {
+        log.info("testService1");
         return ResponseResultUtil.success(String.format("TestHandler service %d", id));
     }
 
